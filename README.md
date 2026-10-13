@@ -17,49 +17,6 @@ A music player app made with Flutter using the [Jamendo API](https://developer.j
   when there is no internet
 - App icon
 
-## How to run
-
-You need the Flutter SDK and an Android device or emulator.
-
-**1. Create the platform folders** (only needed once, the repo only has the Dart code)
-
-```
-flutter create --platforms=android --org com.choira --project-name choira_music .
-flutter pub get
-```
-
-**2. Allow internet access.** Open `android/app/src/main/AndroidManifest.xml` and add this line
-above the `<application` tag:
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-```
-
-(Optional) in the same file change `android:label` to `Choira Music`.
-
-**3. Add the API client ID.** The client ID is not saved in the code or on GitHub.
-Copy `env.example.json` to `env.json` and put your Jamendo client ID in it:
-
-```json
-{ "JAMENDO_CLIENT_ID": "your_client_id_here" }
-```
-
-`env.json` is in `.gitignore`, so it will not be committed.
-
-**4. Generate the app icon**
-
-```
-dart run flutter_launcher_icons
-```
-
-**5. Run or build**
-
-```
-flutter run --dart-define-from-file=env.json
-flutter build apk --release --dart-define-from-file=env.json
-```
-
-The APK is created at `build/app/outputs/flutter-apk/app-release.apk`.
 
 ## Project structure
 
